@@ -1,2 +1,2 @@
 # js-playground
-Often I have problem with simple example for my students, This repository was include example with simple implementation.
+Occasionally I have problems finding simple examples for my students when I want to demonstrate some topic during discussions. This repository includes simple implementations to make different topics easier to understand — mostly collected for myself, from frameworks to plain JavaScript, DB,utils.
