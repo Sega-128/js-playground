@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile.dev.yml
+    container_name: js-playground-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    stdin_open: true
+    tty: true
