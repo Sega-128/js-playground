@@ -11,7 +11,7 @@
                 "name": "Launch Program",
                 "skipFiles": ["<node_internals>/**"],
                 "program": "${workspaceFolder}/authentication/express-session/server.js",
-                "cwd": "${workspaceFolder}",
+                "cwd": "${workspaceFolder}/authentication/express-session",
                 "runtimeExecutable": "node",
                 "console": "integratedTerminal"
         }
