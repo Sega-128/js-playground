@@ -11,3 +11,10 @@
   - profile (GET)
   - logout (POST)
 - Save user in JSON file `user.json`
+
+# How to start ?
+```bash
+  npm i
+  fill in .env file
+  npm run start
+```
