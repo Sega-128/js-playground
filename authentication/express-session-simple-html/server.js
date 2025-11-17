@@ -9,6 +9,7 @@ const bcrypt = require('bcryptjs');
 const db = require('./db');
 const loggerOptions = require('./config/logger');
 const sessionOptions = require('./config/session');
+const { requireAuth } = require('./middlewares/auth');
 
 const app = express();
 
@@ -51,8 +52,9 @@ app.post('/api/login', async (req, res) => {
     res.json({ ok: true });
 });
 
-app.get('/api/profile', (req, res) => {
-    if (!req.session.user) return res.status(401).json({ message: 'Not logged in' });
+app.get('/api/profile', requireAuth, (req, res) => {
+    // check in middleware requireAuth 👇🏻
+    // if (!req.session.user) return res.status(401).json({ message: 'Not logged in' });
     res.json(req.session.user);
 });
 

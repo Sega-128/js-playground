@@ -3,7 +3,7 @@
 
 - Create HTML with login/register page and profile
 - Express for server and static html file
-- Minimal setup: Express, dev logging, env, ESLint, cors, hash for password.
+- Minimal setup: Express, dev logging, env, ESLint, cors, hash for password, middleware.
 - express-session (example: save session in memory)
 - routes:
   - login (POST)
