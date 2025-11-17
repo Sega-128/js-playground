@@ -10,8 +10,8 @@
                 "request": "launch",
                 "name": "Launch Program",
                 "skipFiles": ["<node_internals>/**"],
-                "program": "${workspaceFolder}/authentication/express-session/server.js",
-                "cwd": "${workspaceFolder}/authentication/express-session",
+                "program": "${workspaceFolder}/authentication/express-session-simple-html/server.js",
+                "cwd": "${workspaceFolder}/authentication/express-session-simple-html",
                 "runtimeExecutable": "node",
                 "console": "integratedTerminal"
         }
