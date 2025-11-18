@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="profile-container">
+  <h2>User Profile</h2>
+  <p id="profile-username"></p>
+  <p id="profile-email"></p>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<script>
+async function loadProfile() {
+  const res = await fetch('/api/profile');
+  if (!res.ok) {
+    window.location.href = 'login.html';
+    return;
+  }
+  const user = await res.json();
+  document.getElementById('profile-username').innerText = 'Username: ' + user.username;
+  document.getElementById('profile-email').innerText = 'Email: ' + user.email;
+}
+
+async function logout() {
+  await fetch('/api/logout', { method: 'POST' });
+  window.location.href = 'login.html';
+}
+
+window.onload = loadProfile;
+</script>
+</body>
+</html>
