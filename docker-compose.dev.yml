@@ -25,5 +25,15 @@ services:
     volumes:
       - mongo-data:/data/db
       
+    mysql:
+        image: mysql:8.1
+        container_name: mysql-db
+        restart: always
+        ports:
+          - "3306:3306"
+        volumes:
+          - mysql-data:/var/lib/mysql
+
 volumes:
   mongo-data:
+  mysql-data:
