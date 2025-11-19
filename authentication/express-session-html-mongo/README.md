@@ -1,5 +1,5 @@
 # A simple server with sessions and an example of authentication. 
-# Data is stored in a file, many things are simplified.
+# Data is stored in a mongodb, many things are simplified.
 
 - Create HTML with login/register page and profile
 - Express for server and static html file
