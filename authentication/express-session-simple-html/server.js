@@ -44,7 +44,7 @@ app.post('/api/register', async (req, res) => {
 app.post('/api/login', async (req, res) => {
     const { username, password } = req.body;
     if (!username || !password) return res.status(400).json({ message: 'Fill all fields' });
-    const user = await db.findUserByCredentials(username);
+    const user = await db.findUserByUsername(username);
     if (!user) return res.status(401).json({ message: 'Invalid credentials' });
     const passwordValid = await bcrypt.compare(password, user.password);
     if (!passwordValid) return res.status(401).json({ message: 'Invalid credentials' });

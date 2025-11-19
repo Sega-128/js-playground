@@ -27,13 +27,7 @@ async function findUserByUsername(username) {
     return users.find(u => u.username === username);
 }
 
-async function findUserByCredentials(username) {
-    const users = await getUsers();
-    return users.find(u => u.username === username);
-}
-
 module.exports = {
     addUser,
-    findUserByUsername,
-    findUserByCredentials
+    findUserByUsername
 };
