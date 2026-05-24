@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background: #f8f9fa;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: #282c34;
+  color: #fff;
+}
+
+.header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+}
+
+.subtitle {
+  margin: 0;
+  opacity: 0.85;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  max-width: 32rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.main h2 {
+  margin-top: 0;
+}
+
+.main ul {
+  padding-left: 1.25rem;
+}
+
+.footer {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  background: #e9ecef;
+  color: #495057;
+}
+
+.footer p {
+  margin: 0;
+}

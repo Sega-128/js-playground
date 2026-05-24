@@ -1,0 +1,60 @@
+---
+description: Conventions for React learning lessons in react/
+globs: react/**
+alwaysApply: false
+---
+
+# React Lessons — Conventions
+
+When creating or editing lessons under `react/`:
+
+## Folder layout
+
+```
+react/NN-topic-name/
+  README.md       # lesson doc (English)
+  src/            # starter with // TODO:
+  solution/       # separate runnable Vite project (full answer)
+```
+
+## Language
+
+- All docs under `react/` (course README, lesson README, tasks, hints, UI copy, `// TODO:` comments): **English**
+- Code identifiers: **English** (PascalCase components, camelCase variables)
+
+## Lesson README structure
+
+Every lesson README must include, in order:
+
+1. **Goal** — one sentence
+2. **Theory** — short bullets + links to [react.dev](https://react.dev)
+3. **Task** — checkbox checklist (`- [ ]`)
+4. **Hints** — 1–2 tips, no spoilers
+5. **Check your work** — compare with `solution/`
+6. **Commands** — `npm i`, `npm run dev`
+
+## Starter vs solution
+
+- **Starter (`src/`)**: incomplete code with `// TODO:` markers; must run without errors
+- **Solution (`solution/`)**: full working copy; mirror project root (own `package.json`, `src/`, etc.)
+- Do not put answers in starter; do not leave `// TODO:` in solution
+
+## Tech stack (keep consistent)
+
+- React 19 + TypeScript + Vite
+- ESLint flat config
+- No UI libraries until lesson 15 (capstone)
+- `export function ComponentName()` — named exports for components
+- Strict TypeScript; type props with `interface` from lesson 02 onward
+
+## Naming
+
+- Lesson folders: `NN-kebab-case-topic` (e.g. `03-use-state`)
+- One concept per lesson; task should be completable in ~30–60 minutes
+
+## Adding a new lesson
+
+1. Copy scaffold from the nearest existing lesson
+2. Write English README before coding
+3. Implement solution first, then strip starter to TODOs
+4. Update progress table in `react/README.md`
