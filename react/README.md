@@ -71,7 +71,7 @@ react/01-jsx-and-components/
 | # | Lesson | Folder | Status |
 |---|--------|--------|--------|
 | 01 | JSX & Components | [01-jsx-and-components](./01-jsx-and-components/) | done |
-| 02 | Props | `02-props` | planned |
+| 02 | Props | [02-props](./02-props/) | done |
 | 03 | State (useState) | `03-use-state` | planned |
 | 04 | Events & Forms | `04-events-and-forms` | planned |
 | 05 | Lists & Keys | `05-lists-and-keys` | planned |
@@ -102,7 +102,7 @@ react/01-jsx-and-components/
 
 ---
 
-#### 02 — Props · `02-props` · planned
+#### 02 — Props · `02-props` · **done**
 
 **Topics:** passing data parent → child, read-only props, TypeScript `interface Props`, optional props, `children`
 
