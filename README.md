@@ -7,4 +7,4 @@ Simple examples for my students when I want to demonstrate some topic during dis
     * express session save in memory server, mysql -> (stateless)
 * React (TypeScript, Vite) — [react/README.md](react/README.md)
     * Step-by-step course: JSX → hooks → router → testing → capstone
-    * Ready: [01-jsx-and-components](react/01-jsx-and-components/), [02-props](react/02-props/), [03-use-state](react/03-use-state/)
+    * Ready: [01-jsx-and-components](react/01-jsx-and-components/), [02-props](react/02-props/), [03-use-state](react/03-use-state/), [04-events-and-forms](react/04-events-and-forms/)

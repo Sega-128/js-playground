@@ -73,7 +73,7 @@ react/01-jsx-and-components/
 | 01 | JSX & Components | [01-jsx-and-components](./01-jsx-and-components/) | done |
 | 02 | Props | [02-props](./02-props/) | done |
 | 03 | State (useState) | [03-use-state](./03-use-state/) | done |
-| 04 | Events & Forms | `04-events-and-forms` | planned |
+| 04 | Events & Forms | [04-events-and-forms](./04-events-and-forms/) | done |
 | 05 | Lists & Keys | `05-lists-and-keys` | planned |
 | 06 | useEffect | `06-use-effect` | planned |
 | 07 | useRef | `07-use-ref` | planned |
@@ -122,7 +122,7 @@ react/01-jsx-and-components/
 
 ---
 
-#### 04 — Events & Forms · `04-events-and-forms` · planned
+#### 04 — Events & Forms · [04-events-and-forms](./04-events-and-forms/) · **done**
 
 **Topics:** synthetic events, `onClick`, `onChange`, `onSubmit`, controlled inputs, `preventDefault`
 
