@@ -72,7 +72,7 @@ react/01-jsx-and-components/
 |---|--------|--------|--------|
 | 01 | JSX & Components | [01-jsx-and-components](./01-jsx-and-components/) | done |
 | 02 | Props | [02-props](./02-props/) | done |
-| 03 | State (useState) | `03-use-state` | planned |
+| 03 | State (useState) | [03-use-state](./03-use-state/) | done |
 | 04 | Events & Forms | `04-events-and-forms` | planned |
 | 05 | Lists & Keys | `05-lists-and-keys` | planned |
 | 06 | useEffect | `06-use-effect` | planned |
@@ -112,11 +112,11 @@ react/01-jsx-and-components/
 
 ---
 
-#### 03 — State (useState) · `03-use-state` · planned
+#### 03 — State (useState) · [03-use-state](./03-use-state/) · **done**
 
 **Topics:** local state, setter, re-render, immutability when updating objects and arrays
 
-**Task:** Counter + light/dark theme toggle.
+**Task:** Counter with increment/decrement/reset + light/dark theme toggle.
 
 **Docs:** [State: A Component's Memory](https://react.dev/learn/state-a-components-memory)
 
