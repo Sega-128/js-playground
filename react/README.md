@@ -74,7 +74,7 @@ react/01-jsx-and-components/
 | 02 | Props | [02-props](./02-props/) | done |
 | 03 | State (useState) | [03-use-state](./03-use-state/) | done |
 | 04 | Events & Forms | [04-events-and-forms](./04-events-and-forms/) | done |
-| 05 | Lists & Keys | `05-lists-and-keys` | planned |
+| 05 | Lists & Keys | [05-lists-and-keys](./05-lists-and-keys/) | done |
 | 06 | useEffect | `06-use-effect` | planned |
 | 07 | useRef | `07-use-ref` | planned |
 | 08 | Custom Hooks | `08-custom-hooks` | planned |
@@ -132,7 +132,7 @@ react/01-jsx-and-components/
 
 ---
 
-#### 05 — Lists & Keys · `05-lists-and-keys` · planned
+#### 05 — Lists & Keys · [05-lists-and-keys](./05-lists-and-keys/) · **done**
 
 **Topics:** `.map()`, `key` prop, conditional rendering (`&&`, ternary)
 
