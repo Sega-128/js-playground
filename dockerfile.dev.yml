@@ -4,6 +4,8 @@ RUN apt-get update && \
     apt-get install -y zsh git curl && \
     rm -rf /var/lib/apt/lists/*
 
+USER node
+
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 WORKDIR /usr/src/app
