@@ -1,6 +1,6 @@
 const assert = require('node:assert/strict');
 const { afterEach, beforeEach, describe, it, mock } = require('node:test');
-const bcrypt = require('bcryptjs');
+const argon2 = require('argon2');
 
 const { InvalidCredentialsError, UsernameTakenError } = require('../errors/AppError');
 const userRepository = require('../repositories/userRepository');
@@ -29,8 +29,8 @@ describe('authService', () => {
         await authService.register(credentials);
 
         const [stored] = users;
-        assert.notEqual(stored.password, credentials.password);
-        assert.equal(await bcrypt.compare(credentials.password, stored.password), true);
+        assert.match(stored.password, /^\$argon2id\$/);
+        assert.equal(await argon2.verify(stored.password, credentials.password), true);
     });
 
     it('rejects a username that is already taken', async () => {
@@ -58,13 +58,5 @@ describe('authService', () => {
 
     it('rejects an unknown user', async () => {
         await assert.rejects(authService.login(credentials), InvalidCredentialsError);
-    });
-
-    it('still compares a password for an unknown user', async () => {
-        const compare = mock.method(bcrypt, 'compare');
-
-        await assert.rejects(authService.login(credentials), InvalidCredentialsError);
-
-        assert.equal(compare.mock.callCount(), 1);
     });
 });

@@ -12,7 +12,7 @@ src/
 
 - Express, express-session with sessions stored in MySQL
 - Drizzle ORM with migrations
-- zod validation, bcrypt for passwords
+- zod validation, argon2 for passwords
 - routes:
   - register (POST)
   - login (POST)

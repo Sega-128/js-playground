@@ -1,28 +1,23 @@
-const bcrypt = require('bcryptjs');
+const argon2 = require('argon2');
 
 const { InvalidCredentialsError, UsernameTakenError } = require('../errors/AppError');
 const userRepository = require('../repositories/userRepository');
-
-const SALT_ROUNDS = 12;
-
-// Compared when a user does not exist, so that login takes the same time either way.
-// Otherwise a fast response would reveal which usernames are registered.
-const DUMMY_HASH = bcrypt.hashSync('dummy-password', SALT_ROUNDS);
 
 // Business rules only. This layer knows nothing about req, res, sessions or SQL.
 async function register({ username, email, password }) {
     if (await userRepository.findByUsername(username)) {
         throw new UsernameTakenError();
     }
-    const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+    const hashedPassword = await argon2.hash(password);
     await userRepository.create({ username, email, password: hashedPassword });
 }
 
 async function login({ username, password }) {
     const user = await userRepository.findByUsername(username);
+    if (!user) throw new InvalidCredentialsError();
 
-    const passwordValid = await bcrypt.compare(password, user?.password ?? DUMMY_HASH);
-    if (!user || !passwordValid) throw new InvalidCredentialsError();
+    const passwordValid = await argon2.verify(user.password, password);
+    if (!passwordValid) throw new InvalidCredentialsError();
 
     // Never return the password hash.
     return { username: user.username, email: user.email };

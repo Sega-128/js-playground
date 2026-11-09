@@ -7,11 +7,7 @@ const requiredString = () => z.string({ error: FILL_ALL_FIELDS }).trim().min(1, 
 const registerSchema = z.object({
     username: requiredString().max(255, 'Username is too long'),
     email: z.string({ error: FILL_ALL_FIELDS }).pipe(z.email('Invalid email').max(255, 'Email is too long')),
-    // bcrypt only uses the first 72 bytes of a password.
-    password: z
-        .string({ error: FILL_ALL_FIELDS })
-        .min(8, 'Password must have at least 8 characters')
-        .refine((value) => Buffer.byteLength(value) <= 72, 'Password is too long'),
+    password: z.string({ error: FILL_ALL_FIELDS }).min(8, 'Password must have at least 8 characters'),
 });
 
 const loginSchema = z.object({
