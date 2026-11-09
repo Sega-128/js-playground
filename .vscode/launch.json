@@ -14,6 +14,26 @@
                 "cwd": "${workspaceFolder}/authentication/express-session-simple-html",
                 "runtimeExecutable": "node",
                 "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Layered: server",
+            "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+            "program": "${workspaceFolder}/authentication/express-session-html-mysql-layered/src/server.js",
+            "cwd": "${workspaceFolder}/authentication/express-session-html-mysql-layered",
+            "runtimeExecutable": "node",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Layered: tests",
+            "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+            "cwd": "${workspaceFolder}/authentication/express-session-html-mysql-layered",
+            "runtimeExecutable": "node",
+            "runtimeArgs": ["--env-file=.env.test", "--test"],
+            "console": "integratedTerminal"
         }
     ]
 }
