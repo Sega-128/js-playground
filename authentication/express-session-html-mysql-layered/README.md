@@ -28,13 +28,12 @@ Errors travel back up. A service throws an error such as `InvalidCredentialsErro
 - **Validation:** `zod` checks the request body, including that `username` and `password` are strings.
 - **Stronger passwords:** bcrypt uses 12 rounds, and a password needs at least 8 characters.
 - **Session fixation protection:** the session id changes on login.
-- **Login attempt limit:** 10 failed attempts per IP in 15 minutes, then the server responds with 429. Counters are kept in memory, so they reset on restart and are not shared between servers.
 - **Same login time for unknown users:** the password is always checked with bcrypt, so response time does not reveal whether a username exists.
 
 ## Before using this in production
 
-- Set Express `trust proxy` when running behind a reverse proxy. Without it, `secure` cookies are not sent and all clients count as one IP for the login limit.
-- Use a shared store such as Redis for the login limit if you run more than one server.
+- Limit login attempts, for example with `express-rate-limit`, so passwords cannot be guessed by brute force.
+- Set Express `trust proxy` when running behind a reverse proxy. Without it, `secure` cookies are not sent.
 - Registration still reveals taken usernames, because it says so directly. Hiding that requires a different flow, such as email confirmation.
 
 ## How to start
