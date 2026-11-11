@@ -13,6 +13,15 @@ async function findByUsername(username) {
     return user ?? null;
 }
 
+// The same query as plain SQL through Drizzle, for comparison.
+// Needs: const { sql } = require('drizzle-orm');
+// ${username} is sent as a parameter, not glued into the SQL, so SQL injection is not possible.
+//
+// async function findByUsername(username) {
+//     const [rows] = await db.execute(sql`SELECT * FROM users WHERE username = ${username} LIMIT 1`);
+//     return rows[0] ?? null;
+// }
+
 async function create({ username, email, password }) {
     try {
         await db.insert(users).values({ username, email, password });

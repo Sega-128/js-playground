@@ -1,5 +1,5 @@
 {
-  "name": "express-session-mysql-layered",
+  "name": "express-session-html-mysql-layered",
   "version": "1.0.0",
   "description": "Session authentication with MySQL, split into controller, service and repository layers",
   "main": "src/server.js",
@@ -16,7 +16,7 @@
   "dependencies": {
     "argon2": "^0.45.2",
     "cors": "^2.8.6",
-    "dotenv": "^18.0.9",
+    "dotenv": "^18.0.10",
     "drizzle-orm": "^0.45.4",
     "express": "^5.3.0",
     "express-session": "^1.19.0",
